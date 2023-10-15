@@ -1,0 +1,34 @@
+package in.upendra;
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Assigment3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a sentence: ");
+        String input = scanner.nextLine();
+        scanner.close();
+
+        boolean isPangram = isPangram(input);
+        
+        if (isPangram) {
+            System.out.println("The input is a pangram.");
+        } else {
+            System.out.println("The input is not a pangram.");
+        }
+    }
+
+    public static boolean isPangram(String input) {
+        input = input.toLowerCase();
+        HashSet<Character> alphabetSet = new HashSet<>();
+
+        for (char c : input.toCharArray()) {
+            if (Character.isLetter(c)) {
+                alphabetSet.add(c);
+            }
+        }
+
+        return alphabetSet.size() == 26;
+    }
+}

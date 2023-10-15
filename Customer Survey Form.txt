@@ -1,0 +1,95 @@
+!DOCTYPE html>
+<html>
+    <title>Customer Survey Form</title>
+<head>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-left: 40px;
+
+        }
+
+        
+
+        #submit{
+            display: block;
+            width: 80px;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #0073e6;
+            color: white;
+            border: none;
+    
+        }
+        body{
+            background-color:#0073e6;
+            border: 0px;}
+            #u{
+            display: flex;
+            justify-content: center;
+            color: aliceblue;
+        }
+        table{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="u">Customer Survey Form</h1>
+    
+    <div class="container">
+
+        <form id="surveyForm">
+            <table>
+            
+                <tr>
+                    <td>
+                        <label for="firstName">Name</label>
+                        <input type="text" id="firstName" required style="width: 90%;">
+                    </td>
+                
+            
+                
+                    <td style=" margin-left: 20px;">
+                
+                        <label for="email">  Email:</label>
+                        <input type="email" id="email" required style="width: 100%;">
+                    </td>
+                </tr>
+           
+
+            
+</table>
+           <p> Is this first time You are using Our products & Service ?</p>
+           <input type="radio" name="Yes" value="Yes"/>Yes
+           <input type="radio" name="No" value="No"/>No
+
+           <p> Would you suggestion to your friends and colleagut ?</p>
+           <input type="radio" name="Yes" value="Yes"/>Yes
+           <input type="radio" name="No" value="No"/>No
+
+           <p> How satisfiled are you with out company overall ?</p>
+           <input type="radio" name="Satisfied" value="Satisfied"/>Satisfied
+           <input type="radio" name="Uneclded" value="Uneclded"/>Undeclded
+           <input type="radio" name="Unsatisfield" value="Unsatisfield"/>Unsatisfied
+
+            <p>Do you hava suggestion to improve our service ?</p>
+            <textarea rows="10" cols="80" name="Description"></textarea>
+           
+            <button type="submit" id="submit">Submit</button>
+    
+        </form>
+    </div>
+
+   
+</body>
+</html>

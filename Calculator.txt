@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        table, td, tr {
+            border-collapse: collapse;
+            width: 480px;
+            height: 80px;
+        }
+        body {
+            background-color: Silver;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+        .result-bar {
+            background-color: white;
+        }
+        .row {
+            height: 50px;
+        }
+        .number-body, .operation-body, .result-bar-clear {
+            background-color: black;
+            color: white;
+            text-align: center;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        .operation-body{
+            font-size: 25px;
+        }
+        #display {
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    padding: 0px;
+    text-align:left;
+}
+
+        .operation-body {
+            background-color: gray;
+        }
+        .result-bar-clear {
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr class="row">
+            <td class="result-bar" colspan="3"><input id="display" value=""></td>
+            <td class="result-bar-clear" onclick="clearDisplay()"><div>AC</div></td>
+        </tr>
+        <tr>
+            <td class="number-body" onclick="appendToDisplay('9')"><div>9</div></td>
+            <td class="number-body" onclick="appendToDisplay('8')"><div>8</div></td>
+            <td class="number-body" onclick="appendToDisplay('7')"><div>7</div></td>
+            <td class="operation-body" onclick="appendToDisplay('+')"><div>+</div></td>
+        </tr>
+        <tr>
+            <td class="number-body" onclick="appendToDisplay('4')"><div>4</div></td>
+            <td class="number-body" onclick="appendToDisplay('5')"><div>5</div></td>
+            <td class="number-body" onclick="appendToDisplay('6')"><div>6</div></td>
+            <td class="operation-body" onclick="appendToDisplay('-')"><div>-</div></td>
+        </tr>
+        <tr>
+            <td class="number-body" onclick="appendToDisplay('1')"><div>1</div></td>
+            <td class="number-body" onclick="appendToDisplay('2')"><div>2</div></td>
+            <td class="number-body" onclick="appendToDisplay('3')"><div>3</div></td>
+            <td class="operation-body" onclick="appendToDisplay('/')"><div>%</div></td>
+        </tr>
+        <tr>
+            <td class="number-body" onclick="appendToDisplay('.')"><div>.</div></td>
+            <td class="number-body" onclick="appendToDisplay('0')"><div>0</div></td>
+            <td class="number-body" onclick="calculateResult()"><div>=</div></td>
+            <td class="operation-body" onclick="appendToDisplay('*')"><div>x</div></td>
+        </tr>
+    </table>
+
+    <script>
+        let display = document.getElementById("display");
+
+        function appendToDisplay(value) {
+            display.value += value;
+        }
+
+        function clearDisplay() {
+            display.value = "";
+        }
+
+        function calculateResult() {
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    </script>
+</body>
+</html>
